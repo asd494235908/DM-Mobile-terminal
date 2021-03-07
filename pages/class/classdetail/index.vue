@@ -1,21 +1,25 @@
 <template>
 	<scroll-view class="item-warp" :scroll-top="scrollTop" scroll-y="true" @scroll="onScroll">
 		<view class="item-img-warp">
-			<image v-if="listItem.img&&listItem.img !==''" :src="listItem.img+'?x-oss-process=image/resize,w_600/format,webp/quality,Q_100'" mode="widthFix" class="item-img"></image>
+			<image v-if="listItem.img&&listItem.img !==''" :src="listItem.img+'?x-oss-process=image/resize,w_600/format,webp/quality,Q_100'"
+			 mode="widthFix" class="item-img"></image>
 			<!-- <u-lazy-load :image="listItem.img" class="item-img"></u-lazy-load> -->
 		</view>
-		<view class="item-list" v-for="(item,index) in listItem.list" :key="index">
-			<text class="item-list-titel">{{item.list_name}}</text>
-			<view class="item-list-list">
-				<view class="item-list-item" v-for="(o,j) in item.dtail_list" :key="j" @click="goListgood(o)">
-					<view class="item-list-item-img-laer">
-						<easy-loadimage mode="widthFix"  v-if="o.img&&o.img !==''" :image-src="o.img+'?x-oss-process=image/resize,w_300/format,webp/quality,Q_100'"
-						 class="item-list-item-img" loading-mode="looming-gray" :scroll-top="scrollTop"></easy-loadimage>
+		<view class="item-list_warp">
+			<view class="item-list" v-for="(item,index) in listItem.list" :key="index">
+				<text class="item-list-titel">{{item.list_name}}</text>
+				<view class="item-list-list">
+					<view class="item-list-item" v-for="(o,j) in item.dtail_list" :key="j" @click="goListgood(o)">
+						<view class="item-list-item-img-laer">
+							<easy-loadimage mode="widthFix" v-if="o.img&&o.img !==''" :image-src="o.img+'?x-oss-process=image/resize,w_300/format,webp/quality,Q_100'"
+							 class="item-list-item-img" loading-mode="looming-gray" :scroll-top="scrollTop"></easy-loadimage>
+						</view>
+						<text class="item-list-item-text">{{o.name}}</text>
 					</view>
-					<text class="item-list-item-text">{{o.name}}</text>
 				</view>
 			</view>
 		</view>
+		
 
 	</scroll-view>
 </template>
@@ -51,13 +55,18 @@
 <style lang="scss">
 	.item-warp {
 		width: 100%;
+
 		height: 100%;
-		/* #ifdef H5 */
-		// padding-bottom: 220rpx;
-		/* #endif */
+		// overflow: auto;
+		.item-list_warp{
+			/* #ifdef H5 */
+			padding-bottom: 220rpx;
+			/* #endif */
+		}
 		.item-list {
 			width: 100%;
 			margin-top: 30rpx;
+			
 
 			.item-list-list {
 				display: flex;
