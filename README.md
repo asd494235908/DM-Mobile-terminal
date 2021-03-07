@@ -13,7 +13,7 @@
   - 为什么没有ios平台？
     - 答：ios 平台申请appID有条件限制 
   - 为什么没有小程序？
-    - 答：此类属于电商[类目](https://developers.weixin.qq.com/miniprogram/product/material/#%E9%9D%9E%E4%B8%AA%E4%BA%BA%E4%B8%BB%E4%BD%93%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%94%BE%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%B1%BB%E7%9B%AE) 在平台发布小程序之后 需要营业执照所以无法正式上线。可以打包本地浏览
+    - 答：此项目属于电商[类目](https://developers.weixin.qq.com/miniprogram/product/material/#%E9%9D%9E%E4%B8%AA%E4%BA%BA%E4%B8%BB%E4%BD%93%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%94%BE%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%B1%BB%E7%9B%AE) 在平台发布小程序之后 需要营业执照所以无法正式上线。可以打包本地浏览
 ### 项目预览
 [![WX20190924-234416@2x.png](https://www.dcmaomi.com:3010/serverImage/20210305010710_12523.png)](https://github.com/asd494235908/DM-Mobile-terminal)
   - ![](https://www.dcmaomi.com:3010/serverImage/20210306224256_12147.png)
