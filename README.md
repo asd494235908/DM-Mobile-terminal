@@ -2,7 +2,7 @@
 [![](https://img.shields.io/badge/version-1.0-brightgreen)](https://github.com/asd494235908/DM-Mobile-terminal)
 [![GitHub stars](https://img.shields.io/github/stars/asd494235908/DM-Mobile-terminal.svg?style=social&label=Stars)](https://github.com/asd494235908/DM-Mobile-terminal)
 [![GitHub forks](https://img.shields.io/github/forks/asd494235908/DM-Mobile-terminal.svg?style=social&label=Fork)](https://github.com/asd494235908/DM-Mobile-terminal)
- - [若图片显示不完整请跳转码云](https://gitee.com/dcmaomi/Dm)
+ - [若图片显示不完整请跳转码云](https://gitee.com/dcmaomi/dm-mobile-terminal)
 ### [UNI-APP](https://uniapp.dcloud.io/)
  - uni-app是一个基于Vue.js的跨平台多端应用前端开发框架，由数字天堂DCloud开发并开源。通过uni-app开发框架，开发者只需编写一套代码，即可同时编译生成多个平台的应用。
  ### 项目已部署，在线Demo
