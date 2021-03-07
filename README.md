@@ -49,6 +49,11 @@
      - 配置您的启动图标![](https://www.dcmaomi.com:3010/serverImage/20210306231313_13458.png)
      - 配置 启动页面图(为了适配各个终端最好使用.9图)![](https://www.dcmaomi.com:3010/serverImage/20210306231521_16377.png)
      - 模块配置 勾选(oauth登录鉴权) 配置对应的登录权限与appid
+- 在main.js 配置您的服务器地址  
+    ```javascript
+    //main.js 配置
+    axios.defaults.baseURL = "http://您的本地服务器地址:端口号"  //注意http与https
+    ```
 - 点击左上角的运行 运行到对应的项目
 ### 作者其他项目推荐
 - [DM商城：分布式电商购物商城](https://www.dcmaomi.com/)
