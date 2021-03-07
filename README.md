@@ -41,7 +41,7 @@
   - [Apache](http://httpd.apache.org/)
 ### 运行项目
 - 前后端分离请先运行[后端](https://github.com/asd494235908/DM-Server)
-- 下载zip直接解压或安装git后执行克隆命令 `https://github.com/asd494235908/DcPay.git`
+- 下载zip直接解压或安装git后执行克隆命令 `https://github.com/asd494235908/DM-Mobile-terminal.git`
 - HBuilderX 打开此项目
 - 配置 manifest.json
   - h5  
