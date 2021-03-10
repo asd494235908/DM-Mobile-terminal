@@ -63,12 +63,14 @@
 				this.setGoodList(this.datas)
 				uni.setStorage({
 					key: 'goodlist',
-					data: this.datas
+					data: this.datas,
+					success() {
+						uni.navigateTo({
+							url: '/pages/goodlist/index'
+						})
+						this.setHistory(this.datas.id)
+					}
 				})
-				uni.navigateTo({
-					url: '/pages/goodlist/index'
-				})
-				this.setHistory(this.datas.id)
 			},
 			setHistory(str) {
 				let data = uni.getStorageSync('history')

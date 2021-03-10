@@ -97,7 +97,7 @@
 						<uni-icons :type="cartInfo?'arrowdown':'arrowup'" size="22" color="#fff" class="icon-list"></uni-icons>
 						查看已选择
 					</view>
-					<view class="name-good-right" @click="addCart" >
+					<view class="name-good-right" @click="addCart">
 						加入购物车
 					</view>
 				</view>
@@ -156,13 +156,13 @@
 			uniNavBar
 		},
 		computed: {
-			...mapState(['goodList', 'login', 'userInfo','isValidate']),
+			...mapState(['goodList', 'login', 'userInfo', 'isValidate']),
 			imgs() {
 				let img = []
 				for (let i in this.listImg) {
 					if (i.indexOf('img') !== -1) {
 						if (i.indexOf('show_img') !== -1) continue;
-						if (this.listImg[i] !== null) {
+						if (this.listImg[i] !== null &&this.listImg[i] !== 'NULL'&&this.listImg[i] !== 'nill'&&this.listImg[i] !== '') {
 							img.push(this.listImg[i])
 						}
 					}
@@ -232,7 +232,7 @@
 					// return
 					const res = await this.$http.post('/api/GoodItem', {
 						isAdd: true,
-						isWeb:false,
+						isWeb: false,
 						id: this.listImg.id,
 						uid: this.userInfo.uid,
 						data: this.goodlistInfo

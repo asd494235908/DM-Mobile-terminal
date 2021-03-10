@@ -26,7 +26,7 @@
 
 		</view>
 		<!-- #endif -->
-		<u-swiper :list="swiper" class="swiper-contener" :effect3d="true" mode="round" :height="300" :bgColor="'#fff'"></u-swiper>
+		<u-swiper :list="swiper" class="swiper-contener" :effect3d="true" mode="round" :height="300" :bgColor="'#fff'" @click="handeSwiper"></u-swiper>
 		<!-- icons组件 -->
 		<icons :icons="icons" :scrollTop="scrollTop"></icons>
 		<view class="contenner" v-for="(item,index) in hot" :key="index">
@@ -43,7 +43,7 @@
 				</view>
 			</my-titel>
 		</view>
-
+		<u-toast position="bottom" icon ref="uToast" />
 	</view>
 </template>
 
@@ -60,7 +60,7 @@
 				icons: [],
 				hot: [],
 				scrollTop: 0,
-				timer: null
+				timer: null,
 			}
 		},
 		created() {
@@ -84,6 +84,42 @@
 		},
 		computed: {},
 		methods: {
+			handeSwiper(e) {
+
+				const data = this.swiper[e]
+				if (data.link && data.link !== 'null') {
+					this.goGood(data.link)
+				} else {
+					this.goList(data.alt)
+				}
+			},
+			async goGood(id) {
+				const res = await this.$http.post("/api/getItem", {
+					id
+				})
+				if (res.data.success === true) {
+					uni.setStorage({
+						key: 'goodlist',
+						data: res.data.data[0],
+						success() {
+							uni.navigateTo({
+								url: '/pages/goodlist/index'
+							})
+						}
+					})
+
+				} else {
+					this.$refs.uToast.show({
+						title: '数据有误',
+						type: 'error'
+					})
+				}
+			},
+			goList(alt) {
+				uni.navigateTo({
+					url: '/pages/listgood/index?val=' + alt
+				});
+			},
 			goHistory() {
 				uni.navigateTo({
 					url: '/pages/History/History'
