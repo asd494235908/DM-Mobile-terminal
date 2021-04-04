@@ -42,7 +42,8 @@
 			<view class="cart" v-if="login === true && cartEmpty=== false">
 				<view class="address" v-if="login === true && cartEmpty=== false">
 					<view class="address-left" v-if="info.user_cart">共{{info.user_cart.length}}件宝贝</view>
-					<view class="address-right" @click="goAdderess"><text class="laer ellipsis">收货地址：{{initAddress}}</text></view>
+					<view class="address-right" @click="goAdderess"><text
+							class="laer ellipsis">收货地址：{{initAddress}}</text></view>
 				</view>
 				<evan-checkbox-group v-model="list" class="cart-warp">
 					<view class="cart-item" v-for="(item,index) in info.user_cart" :key="index">
@@ -50,15 +51,17 @@
 							<evan-checkbox :label="item.id" v-model="item.checkbox">
 								<template>
 									<view class="checkbox-warp" :class="{isActive:item.checkbox}" slot="icon">
-										<u-icon v-if="item.checkbox" name="checkbox-mark" color="#fff" size="28"></u-icon>
+										<u-icon v-if="item.checkbox" name="checkbox-mark" color="#fff" size="28">
+										</u-icon>
 									</view>
 								</template>
 							</evan-checkbox>
 						</view>
 						<view class="item-info">
 							<view class="item-info-img" @click="goGoodList(item.data[0])">
-								<easy-loadimage mode="widthFix" :image-src="item.data[0].img_url1" loading-mode="looming-gray" :scroll-top="scrollTop"
-								 style="width: 180rpx;height: 180rpx;"></easy-loadimage>
+								<easy-loadimage mode="widthFix" :image-src="item.data[0].img_url1"
+									loading-mode="looming-gray" :scroll-top="scrollTop"
+									style="width: 180rpx;height: 180rpx;"></easy-loadimage>
 							</view>
 
 							<!-- <image :src="item.data[0].img_url1" mode="widthFix" class="item-info-img"></image> -->
@@ -69,8 +72,8 @@
 								<text class="item-info-text price">￥{{AllPrice(item.price,
 								item.suplist_num)}}</text>
 								<!-- <text class="item-info-text titel">数量 x{{item.suplist_num}}</text> -->
-								<lxc-count class="item-info-text" :min="1" @handleCount="handleCountClick" :index="item.id" :value="item.suplist_num"
-								 :delayed="200">
+								<lxc-count class="item-info-text" :min="1" @handleCount="handleCountClick"
+									:index="item.id" :value="item.suplist_num" :delayed="200">
 								</lxc-count>
 
 							</view>
@@ -109,8 +112,8 @@
 			</view>
 		</view>
 		<view class="" v-else>
-			<u-swipe-action :show="item.show" :index="index" v-for="(item, index) in list_aer" :key="item.id" @click="click"
-			 @open="open" :options="options">
+			<u-swipe-action :show="item.show" :index="index" v-for="(item, index) in list_aer" :key="item.id"
+				@click="click" @open="open" :options="options">
 				<view class="item u-border-bottom">
 					<image mode="aspectFill" :src="item.images" />
 					<!-- 此层wrap在此为必写的，否则可能会出现标题定位错误 -->
@@ -137,7 +140,8 @@
 		<view class="cart" v-if="login === true && cartEmpty=== false">
 			<view class="address" v-if="login === true && cartEmpty=== false">
 				<view class="address-left" v-if="info.user_cart">共{{info.user_cart.length}}件宝贝</view>
-				<view class="address-right" @click="goAdderess"><text class="laer ellipsis">收货地址：{{initAddress}}</text></view>
+				<view class="address-right" @click="goAdderess"><text class="laer ellipsis">收货地址：{{initAddress}}</text>
+				</view>
 			</view>
 			<evan-checkbox-group v-model="list" class="cart-warp">
 				<view class="cart-item" v-for="(item,index) in info.user_cart" :key="index">
@@ -152,8 +156,9 @@
 					</view>
 					<view class="item-info">
 						<view class="item-info-img" @click="goGoodList(item.data[0])">
-							<easy-loadimage mode="widthFix" :image-src="item.data[0].img_url1" loading-mode="looming-gray" :scroll-top="scrollTop"
-							 style="width: 180rpx;height: 180rpx;"></easy-loadimage>
+							<easy-loadimage mode="widthFix" :image-src="item.data[0].img_url1"
+								loading-mode="looming-gray" :scroll-top="scrollTop"
+								style="width: 180rpx;height: 180rpx;"></easy-loadimage>
 						</view>
 
 						<!-- <image :src="item.data[0].img_url1" mode="widthFix" class="item-info-img"></image> -->
@@ -164,8 +169,8 @@
 							<text class="item-info-text price">￥{{AllPrice(item.price,
 							item.suplist_num)}}</text>
 							<!-- <text class="item-info-text titel">数量 x{{item.suplist_num}}</text> -->
-							<lxc-count class="item-info-text" :min="1" @handleCount="handleCountClick" :index="item.id" :value="item.suplist_num"
-							 :delayed="200">
+							<lxc-count class="item-info-text" :min="1" @handleCount="handleCountClick" :index="item.id"
+								:value="item.suplist_num" :delayed="200">
 							</lxc-count>
 
 						</view>
@@ -232,12 +237,12 @@
 						title: '登临送目，正故国晚秋，天气初肃。千里澄江似练，翠峰如簇',
 						images: 'https://www.dcmaomi.com:3010/serverImage/20210131012158_16581.png',
 						show: false,
-					},{
+					}, {
 						id: 4,
 						title: '登临送目，正故国晚秋，天气初肃。千里澄江似练，翠峰如簇',
 						images: 'https://www.dcmaomi.com:3010/serverImage/20210131012158_18905.jpg',
 						show: false,
-					},{
+					}, {
 						id: 5,
 						title: '登临送目，正故国晚秋，天气初肃。千里澄江似练，翠峰如簇',
 						images: 'https://www.dcmaomi.com:3010/serverImage/20210131012156_12384.jpg',
@@ -296,7 +301,7 @@
 			// 传入scrollTop值并触发所有easy-loadimage组件下的滚动监听事件
 			this.scrollTop = scrollTop;
 		},
-		beforeUpdate: function() {
+		Update: function() {
 			// this.intData()
 			this.initAdd()
 		},
@@ -387,10 +392,13 @@
 		},
 		onShow: function() {
 			const res = uni.getStorageSync('token')
-			if (res == '') {}
 			if (this.login === true) {
 				this.intData()
 			}
+			if (this.list.length === 0) return
+			this.info.user_cart.forEach(item => {
+				item.checkbox = true
+			})
 		},
 		onPullDownRefresh: function() {
 			uni.startPullDownRefresh({
@@ -628,13 +636,14 @@
 
 <style lang="scss">
 	.contenner {}
-/* #ifdef MP-WEIXIN */
-.item {
+
+	/* #ifdef MP-WEIXIN */
+	.item {
 		display: flex;
 		padding: 20rpx;
-		margin: 10rpx 0 ;
+		margin: 10rpx 0;
 	}
-	
+
 	image {
 		width: 120rpx;
 		flex: 0 0 120rpx;
@@ -642,14 +651,15 @@
 		margin-right: 20rpx;
 		border-radius: 12rpx;
 	}
-	
+
 	.title {
 		text-align: left;
 		font-size: 28rpx;
 		color: $u-content-color;
 		margin-top: 20rpx;
 	}
-/* #endif */
+
+	/* #endif */
 	.address {
 		border-bottom: 0.5px solid $xt;
 		display: flex;

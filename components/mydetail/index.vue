@@ -61,6 +61,7 @@
 			...mapMutations(['setGoodList']),
 			goodList() {
 				this.setGoodList(this.datas)
+				const self = this
 				uni.setStorage({
 					key: 'goodlist',
 					data: this.datas,
@@ -68,12 +69,13 @@
 						uni.navigateTo({
 							url: '/pages/goodlist/index'
 						})
-						this.setHistory(this.datas.id)
+						self.setHistory(self.datas.id)
 					}
 				})
 			},
 			setHistory(str) {
 				let data = uni.getStorageSync('history')
+				
 				if (data === '') {
 					let list = []
 					list.unshift(str)
